@@ -38,7 +38,7 @@ def get_login():
         curr_connection.commit()
         curr_connection.close()
     except sqlite3.IntegrityError:
-        return 'User already exists!'
+        return 'User already exists or some constraint error happened'
 
     return f'Welcome {username_}'
 
